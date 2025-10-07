@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malik Aerial Imaging | FAA-Certified Drone Solutions for Real Estate</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for Inter font and custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#166534', // Deep Forest Green (Professional and Trustworthy)
+                        'secondary': '#facc15', // Gold/Yellow Accent
+                        'dark-bg': '#0f172a', // Slate 900
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Use Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styling for a professional look */
+        .hero-background {
+            background-image: url('https://placehold.co/1920x1080/166534/ffffff?text=Cinematic+Drone+View+of+Property');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background-color: #facc15; /* Secondary color underline */
+            border-radius: 9999px;
+        }
+        .testimonial-card {
+            min-height: 250px; /* Ensure cards have consistent height */
+        }
+        /* Hide all slides by default for carousel */
+        .testimonial-slide {
+            display: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .testimonial-slide.active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-primary tracking-tight">
+                Malik Aerial Imaging
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-primary transition duration-300 font-medium">About</a>
+                <a href="#pricing" class="text-gray-600 hover:text-primary transition duration-300 font-medium">Pricing Tiers</a>
+                <a href="#calculator" class="text-gray-600 hover:text-primary transition duration-300 font-medium">Quote Calculator</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary transition duration-300 font-medium">Contact</a>
+            </nav>
+            <a href="#calculator" class="px-5 py-2 text-sm font-semibold bg-primary text-white rounded-lg shadow-xl hover:bg-green-800 transition duration-300">
+                Get Instant Quote
+            </a>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section class="hero-background h-[70vh] flex items-center justify-center text-center">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 max-w-4xl px-4">
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight mb-4 animate-fadeInUp">
+                Precision. Perspective. Profit.
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-200 mb-8 font-light">
+                Delivering high-fidelity aerial data and marketing media that ensures your real estate listings stand out. FAA Part 107 Certified.
+            </p>
+            <a href="#calculator" class="px-8 py-3 text-lg font-bold bg-secondary text-gray-900 rounded-xl shadow-2xl hover:bg-yellow-500 transition duration-300 transform hover:scale-105 inline-block">
+                Calculate Your Project Cost
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. About Us / Professionalism Section -->
+    <section id="about" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold section-title text-gray-900 mb-12">Driven by Certification & Quality</h2>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-xl text-gray-600 mb-6">
+                    **Malik Aerial Imaging** was founded on the principle of providing legally compliant, top-tier aerial media. We don't just fly drones; we are experts in airspace regulations, safety protocols, and advanced cinematic techniques.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6 mt-10">
+                    <div class="bg-primary text-white p-6 rounded-xl shadow-2xl w-full md:w-1/2">
+                        <h3 class="text-2xl font-extrabold mb-2">FAA Part 107 Licensed</h3>
+                        <p class="text-lg opacity-90">Commercial drone operations are regulated. Our founder is a certified drone pilot, ensuring every flight is legal, safe, and fully insured. **This protects you and your clients.**</p>
+                    </div>
+                    <div class="bg-secondary text-gray-900 p-6 rounded-xl shadow-2xl w-full md:w-1/2">
+                        <h3 class="text-2xl font-extrabold mb-2">High-End Equipment</h3>
+                        <p class="text-lg opacity-90">We utilize professional-grade UAS (Unmanned Aerial Systems) to deliver stunning 4K footage and 20MP photographs, guaranteeing gallery-quality results for every listing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Dynamic Pricing Calculator (The Complexity Element) -->
+    <section id="calculator" class="py-16 sm:py-24 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold section-title text-center text-gray-900 mb-12">Instant Project Quote Calculator</h2>
+            <div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-primary">
+                
+                <!-- Calculator Inputs -->
+                <div class="space-y-6">
+                    <div>
+                        <label for="serviceType" class="block text-lg font-semibold text-gray-700 mb-2">1. Select Service Type:</label>
+                        <select id="serviceType" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary text-gray-700">
+                            <option value="0" data-base-price="0">-- Please Select a Service --</option>
+                            <option value="photo" data-base-price="150">Aerial Photography (Stills only)</option>
+                            <option value="video" data-base-price="250">Cinematic Video Tour (2-3 min)</option>
+                            <option value="both" data-base-price="350">Photo & Video Bundle</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="propertySize" class="block text-lg font-semibold text-gray-700 mb-2">2. Select Property Size (Based on Lot/Acreage):</label>
+                        <select id="propertySize" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary text-gray-700">
+                            <option value="1">Small Lot (Under 0.5 Acre)</option>
+                            <option value="1.2">Standard Lot (0.5 to 2 Acres)</option>
+                            <option value="1.5">Large Estate (2 to 5 Acres)</option>
+                            <option value="2">Commercial/Acreage (5+ Acres) - Requires Consultation</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Calculated Result -->
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xl font-bold text-gray-800">Base Service Cost:</span>
+                        <span id="baseCost" class="text-2xl font-extrabold text-primary">$0.00</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-xl font-bold text-gray-800">Size & Complexity Adjustment:</span>
+                        <span id="adjustmentCost" class="text-2xl font-extrabold text-primary">$0.00</span>
+                    </div>
+                    
+                    <div class="bg-primary/10 p-4 rounded-lg flex justify-between items-center">
+                        <span class="text-2xl font-extrabold text-gray-900">ESTIMATED TOTAL:</span>
+                        <span id="totalCost" class="text-4xl font-extrabold text-primary">$0.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Pricing Tiers Section -->
+    <section id="pricing" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold section-title text-gray-900 mb-12">Service Tiers & Packages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Tier 1: Essentials -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-xl border-t-8 border-primary/20 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-2xl font-bold text-primary mb-2">Essentials Package</h3>
+                    <p class="text-sm text-gray-500 mb-6">Quick turnaround for standard listings.</p>
+                    <div class="text-5xl font-extrabold mb-6">$150<span class="text-xl font-normal text-gray-500">/flight</span></div>
+                    <ul class="text-left space-y-3 text-gray-700">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> 10 High-Res Stills</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Basic Editing & Color Correction</li>
+                        <li class="flex items-center opacity-50"><svg class="w-5 h-5 mr-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg> Video Footage (No)</li>
+                        <li class="flex items-center opacity-50"><svg class="w-5 h-5 mr-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg> Custom Map Overlays (No)</li>
+                    </ul>
+                    <a href="#contact" class="mt-8 block w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-green-800 transition duration-300">Select Package</a>
+                </div>
+
+                <!-- Tier 2: Premium (Recommended) -->
+                <div class="bg-white p-8 rounded-xl shadow-2xl border-t-8 border-secondary ring-4 ring-secondary/50 transform scale-[1.03]">
+                    <h3 class="text-2xl font-bold text-primary mb-2">Premium Bundle</h3>
+                    <p class="text-sm text-gray-500 mb-6">The complete marketing media solution.</p>
+                    <div class="text-5xl font-extrabold mb-6 text-primary">$350<span class="text-xl font-normal text-gray-500">/flight</span></div>
+                    <ul class="text-left space-y-3 text-gray-700">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> **20 High-Res Stills**</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> **Cinematic 4K Video Tour**</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Advanced Video Editing & Music</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Basic Property Outlining</li>
+                    </ul>
+                    <a href="#contact" class="mt-8 block w-full py-3 bg-secondary text-gray-900 font-bold rounded-lg hover:bg-yellow-400 transition duration-300">Select Package</a>
+                </div>
+
+                <!-- Tier 3: Developer/Custom -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-xl border-t-8 border-primary/20 hover:shadow-2xl transition duration-300">
+                    <h3 class="text-2xl font-bold text-primary mb-2">Development/Custom</h3>
+                    <p class="text-sm text-gray-500 mb-6">For large acreage, commercial, and complex needs.</p>
+                    <div class="text-5xl font-extrabold mb-6">TBD<span class="text-xl font-normal text-gray-500">/quote</span></div>
+                    <ul class="text-left space-y-3 text-gray-700">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Everything in Premium</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Full Property Boundary Mapping</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Orthomosaic Imagery (Stitching)</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Long-Term Construction Monitoring</li>
+                    </ul>
+                    <a href="#contact" class="mt-8 block w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-green-800 transition duration-300">Request Custom Quote</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Testimonials Carousel -->
+    <section id="testimonials" class="py-16 sm:py-24 bg-dark-bg text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold section-title text-white mb-12">Trusted by Local Agents</h2>
+            <div id="testimonial-carousel" class="relative overflow-hidden">
+                
+                <!-- Testimonial Slides -->
+                <div class="testimonial-slide active">
+                    <div class="bg-gray-700 p-8 rounded-xl shadow-2xl testimonial-card">
+                        <p class="text-xl italic mb-4">"The video tour was flawless—smooth flight paths, perfect lighting, and the final edit was delivered in under 24 hours. The listing had a record number of views!"</p>
+                        <p class="font-bold text-secondary">Sarah L., Compass Realty</p>
+                        <p class="text-sm text-gray-400">Luxury Residential Specialist</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <div class="bg-gray-700 p-8 rounded-xl shadow-2xl testimonial-card">
+                        <p class="text-xl italic mb-4">"Having a Part 107 certified pilot gave me peace of mind. The aerial images clearly defined the large lot boundaries, which was critical for the buyer."</p>
+                        <p class="font-bold text-secondary">David K., Commercial Broker</p>
+                        <p class="text-sm text-gray-400">Investment & Land Development</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <div class="bg-gray-700 p-8 rounded-xl shadow-2xl testimonial-card">
+                        <p class="text-xl italic mb-4">"Easy booking process and the quality is simply unmatched. Malik Aerial Imaging is now our exclusive provider for all high-end properties."</p>
+                        <p class="font-bold text-secondary">Jessica H., Premier Homes Group</p>
+                        <p class="text-sm text-gray-400">Managing Partner</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Carousel Indicators -->
+            <div class="flex justify-center mt-6 space-x-3" id="indicators">
+                <button data-slide-index="0" class="w-3 h-3 bg-secondary rounded-full opacity-100 transition duration-300"></button>
+                <button data-slide-index="1" class="w-3 h-3 bg-gray-500 rounded-full opacity-50 hover:opacity-75 transition duration-300"></button>
+                <button data-slide-index="2" class="w-3 h-3 bg-gray-500 rounded-full opacity-50 hover:opacity-75 transition duration-300"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact Section -->
+    <section id="contact" class="py-16 sm:py-24 bg-gray-50">
+        <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold section-title text-center text-gray-900 mb-12">Schedule Your Flight</h2>
+            <p class="text-center text-lg text-gray-600 mb-8">Fill out the form below or call us directly. We operate 7 days a week, weather permitting.</p>
+            
+            <!-- Mock Contact Form -->
+            <form action="#" method="POST" class="space-y-6 bg-white p-8 rounded-xl shadow-2xl">
+                <div>
+                    <label for="agentName" class="block text-sm font-medium text-gray-700">Agent/Client Name</label>
+                    <input type="text" name="agentName" id="agentName" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary">
+                </div>
+                <div>
+                    <label for="agentEmail" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" name="agentEmail" id="agentEmail" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary">
+                </div>
+                <div>
+                    <label for="propertyAddress" class="block text-sm font-medium text-gray-700">Property Address (or Zip Code)</label>
+                    <input type="text" name="propertyAddress" id="propertyAddress" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary">
+                </div>
+                <div>
+                    <label for="projectDetails" class="block text-sm font-medium text-gray-700">Project Scope (e.g., "Need full video tour for 5-acre property")</label>
+                    <textarea id="projectDetails" name="projectDetails" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-lg text-lg font-medium text-gray-900 bg-secondary hover:bg-yellow-500 transition duration-300 transform hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+                        Submit Booking Request
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-start md:items-center text-center md:text-left">
+            <div class="mb-6 md:mb-0">
+                <p class="text-xl font-bold mb-1 text-primary">Malik Aerial Imaging</p>
+                <p class="text-sm text-gray-400">&copy; 2025 All Rights Reserved. | FAA Part 107 Certified</p>
+            </div>
+            <div class="flex flex-col space-y-2 text-sm text-gray-300">
+                <p>Email: info@malikaerial.com (Mock)</p>
+                <p>Phone: (555) 555-1234 (Mock)</p>
+                <a href="#" class="hover:text-primary transition duration-300 text-xs mt-2">Privacy Policy (Mock)</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Calculator and Carousel -->
+    <script>
+        // --- PRICING CALCULATOR LOGIC ---
+        function updatePricing() {
+            const serviceSelect = document.getElementById('serviceType');
+            const sizeSelect = document.getElementById('propertySize');
+            
+            const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+            const basePrice = parseFloat(selectedOption.getAttribute('data-base-price')) || 0;
+            const sizeMultiplier = parseFloat(sizeSelect.value);
+
+            let calculatedAdjustment = 0;
+            let finalPrice = 0;
+
+            if (basePrice > 0) {
+                // Calculation: Base Price * (Multiplier - 1)
+                calculatedAdjustment = basePrice * (sizeMultiplier - 1);
+                finalPrice = basePrice * sizeMultiplier;
+            } else {
+                // If service is not selected, all is zero
+                finalPrice = 0;
+                calculatedAdjustment = 0;
+            }
+
+            // Display results
+            document.getElementById('baseCost').textContent = `$${basePrice.toFixed(2)}`;
+            document.getElementById('adjustmentCost').textContent = `$${calculatedAdjustment.toFixed(2)}`;
+            document.getElementById('totalCost').textContent = `$${finalPrice.toFixed(2)}`;
+
+            // Optional: Alert for complex quotes
+            if (sizeMultiplier === 2 && basePrice > 0) {
+                 // For acreage requiring custom quote, keep the price high but show a message
+                 document.getElementById('totalCost').textContent = `$${finalPrice.toFixed(2)}*`;
+                 console.log("Custom Quote required for properties over 5 acres.");
+            }
+        }
+
+        // Attach event listeners to the select elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const serviceSelect = document.getElementById('serviceType');
+            const sizeSelect = document.getElementById('propertySize');
+            
+            serviceSelect.addEventListener('change', updatePricing);
+            sizeSelect.addEventListener('change', updatePricing);
+            
+            // Initial call to set defaults
+            updatePricing();
+        });
+
+
+        // --- TESTIMONIAL CAROUSEL LOGIC ---
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const indicators = document.querySelectorAll('#indicators button');
+        const totalSlides = slides.length;
+        const intervalTime = 5000; // 5 seconds
+
+        function showSlide(index) {
+            // Hide all slides and reset indicator styles
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('opacity-100'));
+            indicators.forEach(indicator => indicator.classList.add('opacity-50', 'bg-gray-500'));
+            indicators.forEach(indicator => indicator.classList.remove('bg-secondary'));
+
+            // Show current slide and update indicator
+            slides[index].classList.add('active');
+            indicators[index].classList.add('opacity-100', 'bg-secondary');
+            indicators[index].classList.remove('opacity-50', 'bg-gray-500');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Initialize carousel and start auto-play
+        showSlide(currentSlide);
+        setInterval(nextSlide, intervalTime);
+
+        // Allow clicking indicators to change slide
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-slide-index'));
+                showSlide(index);
+            });
+        });
+    </script>
+</body>
+</html>
